@@ -44,7 +44,11 @@ function AppContent() {
   const fetchUserBookmarks = async () => {
     try {
       const bookmarks = await api.getBookmarks(userId);
-      const bookmarkedIds = new Set(bookmarks.map((b) => b.contestId._id));
+      const bookmarkedIds = new Set(
+        bookmarks
+          .filter((b) => b?.contestId?._id) // Ensure contestId exists before accessing _id
+          .map((b) => b.contestId._id)
+      );
       setBookmarkedContests(bookmarkedIds);
     } catch (error) {
       console.error("Error fetching bookmarks:", error);

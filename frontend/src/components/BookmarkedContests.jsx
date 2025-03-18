@@ -28,7 +28,9 @@ const BookmarkedContests = () => {
   const removeBookmark = async (contestId) => {
     try {
       await api.removeBookmark(userId, contestId);
-      setBookmarks(bookmarks.filter(bookmark => bookmark.contestId._id !== contestId));
+      setBookmarks(prevBookmarks =>
+        prevBookmarks.filter(bookmark => bookmark.contestId?._id !== contestId)
+      );
     } catch (error) {
       console.error('Error removing bookmark:', error);
     }
@@ -49,7 +51,7 @@ const BookmarkedContests = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {bookmarks.map(({ contestId: contest }) => (
+          {bookmarks.filter(({ contestId }) => contestId).map(({ contestId: contest }) => (
             <div
               key={contest._id}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
