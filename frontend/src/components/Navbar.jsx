@@ -9,7 +9,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md transition-colors duration-200">
+    <nav className="bg-white dark:bg-[#000615] border-b border-[#384c6c]/60 text-gray-900 dark:text-white shadow-md transition-colors duration-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">

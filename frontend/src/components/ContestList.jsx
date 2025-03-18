@@ -46,18 +46,6 @@ const ContestList = ({ contests, onBookmark }) => {
     }
   };
 
-  const getPlatformBorder = (platform) => {
-    switch (platform) {
-      case "Codeforces":
-        return "border-[#1E88E5]";
-      case "CodeChef":
-        return "border-[#5D4037]";
-      case "LeetCode":
-        return "border-[#FFA000]";
-      default:
-        return "border-gray-400";
-    }
-  };
 
   const getTimeStatus = (startTime) => {
     const now = new Date();
@@ -141,9 +129,7 @@ const ContestList = ({ contests, onBookmark }) => {
             return (
               <motion.div
                 key={contest._id}
-                className={`bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 border-l-4 ${getPlatformBorder(
-                  contest.platform
-                )}`}
+                className={`bg-white dark:bg-[#050819] border border-muted border-[#384c6c]/60 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300)}`}
                 variants={item}
               >
                 <div className="space-y-4">
@@ -172,7 +158,7 @@ const ContestList = ({ contests, onBookmark }) => {
                       href={contest.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-md hover:from-blue-600 hover:to-blue-700 transition-colors text-center font-medium shadow-sm hover:shadow-md"
+                      className="flex-1 bg-[#1787ec] text-white px-4 py-2 rounded-md hover:from-blue-600 hover:to-blue-700 transition-colors text-center font-medium shadow-sm hover:shadow-md"
                     >
                       Go to Contest
                     </a>

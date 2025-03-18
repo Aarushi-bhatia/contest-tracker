@@ -105,7 +105,7 @@ function AppContent() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#F5F7FA] dark:bg-[#1C2331] transition-colors duration-300">
+      <div className="min-h-screen bg-[#F5F7FA] dark:bg-[#000615] transition-colors duration-300">
         <Navbar />
         <main className="container mx-auto px-4 py-8">
           {loading ? (
